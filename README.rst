@@ -5,7 +5,7 @@ Recursively resolve package dependencies using apt.
 Usage
 ~~~~~
 
-command line:
+command line::
 
   usage: apt-deps [-h] PACKAGES [PACKAGES ...]
 
@@ -17,7 +17,7 @@ command line:
   optional arguments:
    -h, --help  show this help message and exit
 
-Python:
+Python::
 
   import apt_deps.get_deps
   a = apt_deps.get_deps.DepFinder(['apt', 'nginx-extras'])
