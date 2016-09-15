@@ -12,7 +12,7 @@ class DepFinder(object):
             self.deps_recurse(self.dep_set, p)
         self.apt_cache.close()
 
-    def call(self, pkg_list):
+    def __call__(self, pkg_list):
         self.dep_set.clear()
         self.apt_cache.open()
         for item in pkg_list:
