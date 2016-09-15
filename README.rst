@@ -19,12 +19,14 @@ command line:
 
 Python:
 
+```
     import apt_deps.get_deps
     a = apt_deps.get_deps.DepFinder(['apt', 'nginx-extras'])
     print(a.dep_set)
     # get a different set of dependencies
     a('apache2', 'python')
     print(a.dep_set)
+```
 
 Features
 ~~~~~~~~
