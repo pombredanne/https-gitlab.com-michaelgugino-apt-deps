@@ -19,7 +19,7 @@ py35:
     - tox -e py35
 
 pep8:
-  image: python:latest
+  image: ubuntu:xenial
   stage: test
   script:
     - tox -e pep8
