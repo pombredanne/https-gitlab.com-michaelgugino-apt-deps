@@ -1,7 +1,8 @@
 before_script:
   - apt-get update -qy
-  - apt-get install -y python-apt
+  - apt-get install -y g++ gcc libapt-pkg-dev
   - pip install tox setuptools pbr
+  - pip install git+git://anonscm.debian.org/apt/python-apt.git@1.1.0_beta1
 
 py27:
   stage: test
