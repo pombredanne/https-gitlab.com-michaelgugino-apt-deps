@@ -1,6 +1,7 @@
 import apt
 import argparse
 
+
 class DepFinder(object):
 
     def __init__(self, pkg_list):
@@ -21,24 +22,25 @@ class DepFinder(object):
         self.apt_cache.close()
 
     def deps_recurse(self, s, p):
-      deps = p.candidate.get_dependencies('Depends')
-      for i in deps:
-        dp = i.installed_target_versions
-        if len(dp) > 0:
-          if not dp[0].package.name in s:
-            s.add(dp[0].package.name)
-            self.deps_recurse(s, dp[0].package)
+        deps = p.candidate.get_dependencies('Depends')
+        for i in deps:
+            dp = i.installed_target_versions
+            if len(dp) > 0:
+                if not dp[0].package.name in s:
+                    s.add(dp[0].package.name)
+                    self.deps_recurse(s, dp[0].package)
+
 
 def main():
     parser = argparse.ArgumentParser(
         description='Find recursive dependencies of installed package.')
     parser.add_argument('pkgs', metavar='PACKAGES', nargs='+',
-                    help='package(s) to resolve dependencies')
+                        help='package(s) to resolve dependencies')
     args = parser.parse_args()
     df = DepFinder(args.pkgs)
     deps = df.dep_set
     for i in deps:
-      print(i)
+        print(i)
 
 if __name__ == '__main__':
     main()

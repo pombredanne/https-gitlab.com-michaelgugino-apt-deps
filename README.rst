@@ -2,6 +2,10 @@ apt-deps
 ========
 Recursively resolve package dependencies using apt.
 
+Installation
+~~~~~~~~~~~~
+On Debian/Ubuntu: pip install apt_deps
+
 Usage
 ~~~~~
 
